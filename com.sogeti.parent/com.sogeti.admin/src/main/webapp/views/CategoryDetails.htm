@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+	<b style="position: absolute; margin-left: 250px; margin-bottom: -100px;margin-top: -20px;">Product Category</b>
+	<table table class="table table-bordered table-striped" style="width:450px; margin-top: -200px; margin-left: 400px;">
+		<tr >
+			<td>Category name</td>
+			<td><input type="text" ng-model="catName" /></td>
+			<td><button class="btn" 
+			onclick="CatAdd(catName)">Add Category</button></td>
+		</tr>
+		<!-- <tr class="success">
+			<td>Category Description</td>
+			<td><input type="text" ng-model="categoryDesc" /></td>
+		</tr> -->
+		<!-- <tr class="success">
+	
+			<td><button class="btn" 
+			onclick="CatAdd(catName)">Add Category</button></td>
+		</tr> -->
+	</table>
+<b style="position: absolute; margin-left: 250px; margin-bottom: -100px;">List Of Product Category</b>
+	<table table class="table table-bordered table-striped" style="width:450px; margin-top: 100px; margin-left: 400px;" ng-init="getAllCategory()">
+		<tr >
+			<td>Category name</td>
+			<td>Category id</td>
+		<!-- 	<td>Edit</td> -->
+			<!-- <td>Delete</td> -->
+		</tr>
+		
+		<tr ng-repeat="cat in categorys">
+			<td>{{cat.CatName}}</td>
+			<td>{{cat.catId}}</td>
+			
+			<td><a ng-click="editProductCat(cat)"
+				class="btn btn-small btn-success">edit</a></td>
+			<td><a ng-click="deleteProductCat(cat.catId)"
+				class="btn btn-small btn-danger">delete</a></td>
+		</tr>
+	</table>
+	
+	
+	<!-- <table class="table table-bordered" ng-init="productManageAll()">
+		<tr class="success">
+			<td>Product name</td>
+			<td>Product Description</td>
+			<td>Product Price</td>
+			<td>Product Quantity</td>
+			<td>Product Category</td>
+			<td>Edit</td>
+			<td>Delete</td>
+		</tr>
+		<tr class="success" ng-repeat="product in products">
+			<td>{{product.name}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.quantity}}</td>
+			<td>{{product.catagoryName}}</td>
+			<td><a ng-click="editProduct(product)"
+				class="btn btn-small btn-success">edit</a></td>
+			<td><a ng-click="deleteProduct(product.sku)"
+				class="btn btn-small btn-danger">delete</a></td>
+		</tr>
+	</table> -->
+</body>
+</html>

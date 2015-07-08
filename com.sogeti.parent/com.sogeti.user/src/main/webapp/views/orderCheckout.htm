@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 "> -->
+	<table class="table table-bordered" ng-controller="storeController"
+		ng-init="randomString()" style="width: 60%; margin-left: 10em">
+		<tr class="well">
+			<!-- <td class="tdCenter">Order ID</td> -->
+			<td class="tdCenter">Transaction ID</td>
+		<tr>
+			<!-- <td class="tdCenter">{{cart.randomGenerator[0].orderID}} -->
+			<td class="tdCenter">{{cart.randomGenerator[0].transactionID}}</td>
+		</tr>
+	</table>
+
+	<div class="row-fluid">
+		<div>
+
+
+
+			<!-- items -->
+			<table class="table table-hover"
+				style="width: 60%; margin-left: 10em">
+
+				<!-- header -->
+				<tr class="active">
+					<td><b>Item</b></td>
+					<td class="tdCenter"><b>Quantity</b></td>
+					<td class="tdRight"><b>Price</b></td>
+
+				</tr>
+
+				<!-- empty cart message -->
+				<tr ng-hide="cart.getTotalCount() > 0" class="active">
+					<td class="tdCenter" colspan="4">Your cart is empty.</td>
+				</tr>
+
+				<!-- cart items -->
+				<tr ng-repeat="item in cart.items | orderBy:'name'" class="active">
+					<td>{{item.name}}</td>
+					<td class="tdCenter">{{item.quantity}}</td>
+					<td class="tdRight">{{item.price * item.quantity | currency}}</td>
+
+				</tr>
+
+				<!-- footer -->
+				<tr class="active">
+					<td><b>Total</b></td>
+					<td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
+					<td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
+				</tr>
+			</table>
+		</div>
+
+		<div>
+
+			<table class="table table-hover" ng-controller="storeController"
+				style="width: 60%; margin-left: 10em">
+
+				<tr class="active">
+					<td align="left" id="trID">User Address<br>
+						{{cart.userDetails[0].firstName}}<br>
+						{{cart.userDetails[0].middleName}}<br>
+						{{cart.userDetails[0].lastName}}<br>
+						{{cart.userDetails[0].addressLine1}}<br>
+						{{cart.userDetails[0].addressLine2}}<br>
+						{{cart.userDetails[0].city}}<br>
+						{{cart.userDetails[0].state}}<br></td>
+					<td>
+					<tr>
+					<td>
+						<button class="btn btn-inverse"
+							onclick="window.location.href='index.htm'"
+							style="width: 40%; float: left;">
+							<i class="icon-chevron-left" /> back to store
+						</button>
+					</td>
+					
+					<td>
+						<button class="btn btn-success" style="width: 30%; float: right"
+							ng-click="placeOrder(cart.userDetails[0].userId,cart.randomGenerator[0].transactionID,cart.getTotalPrice(),'SuccessFull',cart.items)">
+							<i class="icon-ok icon-white" /> Place Order
+						</button>
+					</td>
+					<!-- </tr>
+					<tr> -->
+					
+					</tr>
+				<
+			</table>
+		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+			<p align="center">
+				<tr class="active">
+					<td>Search: <input ng-model="search"
+						class="span2 search-query" placeholder="Product  Search"></span>&nbsp;&nbsp;&nbsp;
+					</td>
+
+					<td>Category:item <select ng-model="selectedItem"
+						class="btn dropdown-toggle">
+							<option ng-repeat="product in store.products"
+								value="{{product.catagoryName}}">{{product.catagoryName}}</option>
+					</select>
+					</td>
+				</tr>
+			</p>
+
+
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-md-2 col-md-offset-2 "> -->
+			<table class="table table-hover" style="width: 60%; margin-left: 10em">
+
+
+				<tr class="active">
+
+					<td><b>ProductName</b></td>
+					<td><b>ProductCatagoryName</b></td>
+					<td><b>ProductDesc</b></td>
+					<td><b>ProductPrice</b></td>
+				</tr>
+				<tr class="active">
+					<td class="tdRight" colspan="5"><a href="index.htm#/cart"
+						title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+							<i class="icon-shopping-cart" /> <b>{{cart.getTotalCount()}}</b>
+							items, <b>{{cart.getTotalPrice() | currency}}</b>
+					</a></td>
+				</tr>
+
+				<tr
+					dir-paginate="product in store.products | orderBy:'name' | filter:search | filter:selectedItem|itemsPerPage: pageSize"
+					current-page="currentPage" class="active">
+
+
+					<td>{{product.name}}</td>
+					<td>{{product.catagoryName}}</td>
+					<td>{{product.description}}</td>
+					<td>{{product.price | currency}} </br> <br> <a href=""
+						ng-click="cart.addItem(product.sku, product.name, product.price, 1)">
+							add to cart </a>
+					</td>
+
+				</tr>
+
+
+
+				<tr class="active">
+					<td class="tdRight" colspan="5"><a href="index.htm#/cart"
+						title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+							<i class="icon-shopping-cart" /> <b>{{cart.getTotalCount()}}</b>
+							items, <b>{{cart.getTotalPrice() | currency}}</b>
+					</a></td>
+				</tr>
+
+			</table>
+			<!-- for pagination -->
+			<div class="text-center" align="left">
+				<dir-pagination-controls boundary-links="true"
+					template-url="dirPagination.tpl.html"></dir-pagination-controls>
+			</div>
+
+		</div>
+	</div>
+</div>

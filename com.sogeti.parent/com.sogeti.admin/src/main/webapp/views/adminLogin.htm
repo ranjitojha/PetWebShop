@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body ng-controller="storeController">
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-md-7 col-md-offset-7 "> -->
+				<b
+					style="position: absolute; margin-left: 250px; margin-bottom: -100px;margin-top: -200px;">Admin
+					Login Page</b>
+				<div class="table table-bordered table-striped"
+					style="width: 450px; margin-top: -100px; position: absolute; margin-left: 400px;">
+
+					<form name="form">
+						<div class="form-group"
+							ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+							<label for="username">Username</label> <input type="text"
+								ng-model="uname" required placeholder="Enter username">
+							<span
+								ng-show="form.username.$dirty && form.username.$error.required"
+								class="help-block">Username is required</span>
+						</div>
+						<div class="form-group"
+							ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+							<label for="password">Password</label> <input type="password"
+								ng-model="password" required placeholder="Enter password">
+							<span
+								ng-show="form.password.$dirty && form.password.$error.required"
+								class="help-block">Password is required</span>
+						</div>
+						<div class="form-actions" style="margin-left: 10px;">
+
+							<button class="btn btn-info"
+								ng-click="userLoginfunc(uname,password)">login</button>
+
+							<!-- <button 
+									onclick="window.location.href='#adminRegister'">SignUp
+									</button> -->
+							<a href="#adminRegistration" class="btn btn-link">Register</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style>
+.wrapper {
+	text-align: center;
+}
+
+.button {
+	position: absolute;
+	top: 50%;
+}
+</style>
+</head>
+<body ng-controller="storeController">
+	<b
+		style="position: absolute; margin-left: 250px; margin-bottom: 100px; margin-top: -150px">Product
+		Management</b>
+	<table class="table table-bordered table-striped"
+		style="width: 450px; margin-top: -300px; margin-left: 400px;">
+		<tr>
+			<td>Product Category</td>
+			<td><select ng-init="getAllCategory()" ng-model="category">
+					<option ng:repeat="cat in categorys" value="{{cat.catId}}">{{cat.CatName}}</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>Product name</td>
+			<td><input type="text" ng-model="prodName" /></td>
+		</tr>
+
+		<tr>
+			<td>Product Price</td>
+			<td><input type="text" ng-model="prodPrice" /></td>
+		</tr>
+		<tr>
+			<td>Product Quantity</td>
+			<td><input type="text" ng-model="prodQuant" /></td>
+		</tr>
+		<tr>
+			<button class="btn btn-success"
+				ng-click="productManageAdd(prodName,prodPrice,prodQuant,category)"
+				style="width: 250px; float: center; margin-top: 150px; margin-left: 400px;">Add
+				Product</button>
+
+		</tr>
+		<tr>
+
+			<button class="btn btn-info"
+				style="width: 250px; float: center; margin-top: 150px; margin-center: 400px;"
+				onclick="window.location.href='#viewProductDetails'">View
+				Products</button>
+		</tr>
+	</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+</head>
+<body ng-controller="storeController">
+
+<br><br><br><br><br>
+<b style="margin-left:280px; position: absolute;margin-top: -270px;">List Of Product</b>
+	<table class="table table-bordered table-striped" style="width:450px; margin-top: -250px; position: absolute;margin-left: 400px;" ng-init="getProductList()">
+		<tr >
+			<td>Product name</td>
+			<td>Product Description</td>
+			<td>Product Price</td>
+			<td>Product Quantity</td>
+			<!-- <td>Product Category</td> -->
+			
+			<td>Delete</td>
+		</tr>
+		<tr  ng-repeat="product in products" class="active">
+			<td>{{product.productName}}</td>
+			<!-- <td>{{product.productDescription}}</td> -->
+			<td>{{product.productPrice}}</td>
+			<td>{{product.productQuantity}}</td>
+			<td>{{product.productCatagory.catagoryName}}</td>
+			
+			<td><a ng-click="deleteProduct(product.productId)"
+				class="btn btn-small btn-danger">delete</a></td>
+		</tr>
+	</table> 
+
+	<div class="text-center" align="left">
+				<dir-pagination-controls boundary-links="true"
+					template-url="dirPagination.tpl.html"></dir-pagination-controls>
+			</div>
+	
+</body>
+</html>
